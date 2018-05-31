@@ -1,0 +1,51 @@
+[core]
+    pager = less -SR
+    editor = nvim
+
+[user]
+    name = Myst Fox
+    email = myst@focks.pw
+    signingkey = 218583F5699BE936C95CB0C45EFAD6B6D57E0AA0
+
+[merge]
+    conflictstyle = diff3
+    tool = gvimdiff
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log --graph --pretty=lg
+    ls = ls-files
+
+[push]
+    default = current
+
+[ghq]
+    root = ~/src
+    root = ~/go/src
+
+# This is similar to the format I had before, including things needing flags,
+# but adds GPG status too.
+[pretty]
+    lg = %C(auto)%h%d GPG(%G?) %s
+
+# This lets you use fugitive as a mergetool. Not setup as default yet.
+[mergetool "fugitive"]
+	cmd = nvim-qt -f -c \"Gdiff\" \"$MERGED\"

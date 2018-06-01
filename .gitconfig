@@ -43,6 +43,8 @@
 
 # This is similar to the format I had before, including things needing flags,
 # but adds GPG status too.
+# TODO: color GPG output? I can't color code the letter sadly, but just *a*
+# color would make it easier to distinguish from the commit's title.
 [pretty]
     lg = %C(auto)%h%d GPG(%G?) %s
 

@@ -49,5 +49,9 @@
     lg = %C(auto)%h%d GPG(%G?) %s
 
 # This lets you use fugitive as a mergetool. Not setup as default yet.
+# The options don't work for nvim-qt :/
 [mergetool "fugitive"]
-	cmd = nvim-qt -f -c \"Gdiff\" \"$MERGED\"
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+
+[commit]
+	gpgsign = true

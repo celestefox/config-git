@@ -33,6 +33,8 @@
     df = diff
     lg = log --graph --pretty=lg
     ls = ls-files
+    kdf = difftool --tool=kitty --no-prompt --trust-exit-code --no-symlinks --dir-diff
+    gdf = difftool --tool=kitty.gui --no-prompt --trust-exit-code --no-symlinks --dir-diff
 
 [push]
     default = current
@@ -53,5 +55,12 @@
 [mergetool "fugitive"]
 	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 
+# kitty difftools
+# kitty's a fancy terminal emulator and it offers a builtin fancy diff kitten.
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+
 [commit]
-	gpgsign = true
+	gpgsign = false
